@@ -1,0 +1,7 @@
+process  {
+    match(entry, "hi", /(Bonjour)/,  "french")
+}
+
+process {
+    print(entry.french)
+}

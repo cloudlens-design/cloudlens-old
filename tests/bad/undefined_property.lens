@@ -1,0 +1,16 @@
+var state = "green";
+
+match (
+    "My color is (?<color>[^ ]+)!"
+)
+
+
+process (e) {
+    if ((e.color=="blue" && state != "green" && state != undefined) ||
+        (e.color=="red" && state != "blue") ||
+        (e.color=="green" && state != "red")) {
+          print("error:" + state + "," + e.color)
+    };
+    state=e.color;
+    print(bogus_set[state]);
+}

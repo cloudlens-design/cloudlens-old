@@ -1,0 +1,18 @@
+{
+    state = undefined;
+}
+
+match (
+    "My color is (?<color>[^ ]+)!"
+)
+
+
+process{
+    if ((entry.color=="blue" && state != "green" && state != undefined) ||
+    	(entry.color=="red" && state != "blue") ||
+    	(entry.color=="green" && state != "red")) {
+    		print("error:" + state + "," + entry.color);
+    }
+    
+    state=entry.color;
+}

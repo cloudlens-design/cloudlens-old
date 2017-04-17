@@ -1,0 +1,24 @@
+var totalApples = 0;
+var warning = false;
+
+match (
+    "(?<numApples: int>\d+) apples";
+    "^(?<name>[^ ]*)"
+)
+
+process{
+    print(entry.name);
+}
+
+process when(entry){
+    totalApples += entry.numApples || 0;
+    if(totalApples > 10 && !warning) {
+      	warning = true;
+    	entry.activate = true;
+    }
+}
+
+process{
+    if(entry.activate)
+        print("We picked too many apples: " + totalApples);
+}

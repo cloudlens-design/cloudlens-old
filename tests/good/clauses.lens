@@ -1,0 +1,7 @@
+process (entry) when (entry.a entry.b, entry.c entry.d.foo) {
+    print(entry.message)
+}
+
+process {
+    print(entry.d.foo)
+}

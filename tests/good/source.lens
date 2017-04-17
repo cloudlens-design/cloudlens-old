@@ -1,0 +1,9 @@
+process {
+    print(entry.message)
+}
+
+source ("local:tests/good/source.log2")
+
+process {
+    print(entry.message)
+}

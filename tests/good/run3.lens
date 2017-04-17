@@ -1,0 +1,25 @@
+lens f(x, log){
+    process {
+    	print(x + entry.message)
+    }
+    {print("middle")}
+    process {
+     	print(x + entry.message)
+    }
+}
+
+process {
+    print("0 " + entry.message)
+}
+
+f ("1 ")
+
+process {
+    print("2 " + entry.message)
+}
+
+f ("3 ")
+
+process {
+    print("4 " + entry.message)
+}

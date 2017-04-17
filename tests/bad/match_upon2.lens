@@ -1,0 +1,3 @@
+match upon hi (
+    "(?<foo>foo)"
+)

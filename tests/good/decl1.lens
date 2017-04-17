@@ -1,0 +1,19 @@
+process  {
+    print(1)
+}
+
+lens f(x, log){
+    var y = 10; 
+    process  {
+     	print(x + y)
+     }
+}
+
+var y = 40;
+
+process  {
+    print(y + 2)
+}
+
+f(3)
+

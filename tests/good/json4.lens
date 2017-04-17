@@ -1,0 +1,7 @@
+match upon entry.hi (
+    "(?<french>Bonjour)"
+)
+
+process {
+    print(entry.french)
+}

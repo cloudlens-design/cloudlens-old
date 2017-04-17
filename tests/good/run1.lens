@@ -1,0 +1,20 @@
+lens l1 (log) {
+     process {
+         print("L1 " + entry.message)
+     }
+}
+
+lens l2 (log) {
+     process {
+         print("L2 " + entry.message)
+     }
+}
+
+lens l3 (log) {
+     process {
+         print("L3 " + entry.message)
+     }
+}
+
+l1()
+l2()

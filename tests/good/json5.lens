@@ -1,0 +1,24 @@
+{ print("init"); }
+
+match upon entry.hi (
+    "(?<french>Bonjour)"
+)
+
+process{ print(entry.message); }
+
+process( entry )  when  ( entry.foo.a.b ) {
+    entry.foo.a.c = "4012";
+    print(entry.foo.a.b);
+}
+
+{ print("reset"); }
+
+process {
+    print(entry.foo.a.c)
+}
+
+process when (entry.french){
+    print("'" + entry.message + "' is in french.")
+}
+
+{ print("post"); }
